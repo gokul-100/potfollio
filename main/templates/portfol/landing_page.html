@@ -21,24 +21,14 @@
     </div>
  
     <div class="card-container">
+        {% for card in cards %}
         <div class="card">
-            <a href="{% url 'post_detail' 1 %}">
-                <img src='https://img.freepik.com/free-photo/sports-car-driving-asphalt-road-night-generative-ai_188544-8052.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1723939200&semt=ais_hybrid' alt="New Post 1">
-                <p>New Post - 1</p>
-            </a>
+            <div class="card-title">{{ card.card_title }}</div>
+            <img src="{{ card.img_url.url }}" alt="Image {{ card.id }}">
+            <div class="card-description">{{ card.card_description }}</div>
+            <a href="{% url 'post_detail' card.id %}">More...</a>
         </div>
-        <div class="card">
-            <a href="{% url 'post_detail' 2 %}">
-                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEzqyX4c8UI_PaZRCJ6GmaGRnQ6zA2HakD0w&s' alt="New Post 2">
-                <p>New Post - 2</p>
-            </a>
-        </div>
-        <div class="card">
-            <a href="{% url 'post_detail' 3 %}">
-                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTicraEFPD1qQB1uCGZ36dlM3LIZ7_CQhfrpw&s' alt="New Post 3">
-                <p>New Post - 3</p>
-            </a>
-        </div>
+    {% endfor %}   
     </div>
     <a href="{% url 'card_page' %}">All Post...</a>
 
