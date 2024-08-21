@@ -1,4 +1,4 @@
-
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -40,7 +40,49 @@ body {
     border-radius: 8px;
 }
 
+/* Header Styling */
+header {
+    background-color: #333;
+    padding: 15px 0;
+}
 
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Card Container Styling */
 .card-container {
     display: flex;
     gap: 20px;
@@ -72,10 +114,29 @@ body {
     margin: 10px;
     font-size: 1rem;
 }
+
 .card-description {
     font-size: 1rem;
     color: #555;
     margin: 0 15px 15px; /* Margin around description */
+}
+
+.card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+/* Card Link Styling */
+.card a {
+    text-decoration: none;
+    color: #007bff; 
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px; 
+}
+
+.card a:hover {
+    color: #0056b3; 
 }
 
 /* Contact Button Styling */
@@ -109,20 +170,11 @@ body {
 .more-button:hover {
     background-color: #1e7e34;
 }
-.card:hover {
-    transform: translateY(-10px); 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
-}
-
-/* Card Link Styling */
-.card a {
-    text-decoration: none;
-    color: #007bff; 
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 10px; 
-}
-
-.card a:hover {
-    color: #0056b3; 
+.latestpost h2{
+    position: absolute;
+    left: 29px;
+    border: black;
+    border-block-color: initial;
+    color: seagreen;
+    text-shadow: 2px 1px 4px black;
 }

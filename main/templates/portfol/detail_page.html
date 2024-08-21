@@ -5,10 +5,14 @@
     <div class="container">
         <div class="content">
             <h1 class="title">{{ card.card_title }}</h1>
-            <img src="{{ card.image }}" class="image" alt="Blog Image">
+            <img src="{{ card.img_url.url }}" class="image" alt="Blog Image"><br></br>
             <p class="description">{{ card.card_description }}</p>
+            <p class="description">{{ card.created_at }}</p>
+            <p class="description">{{ card.event_time }}</p>
+
         </div>
     </div>
+
   </center>
 {% endblock %}
 

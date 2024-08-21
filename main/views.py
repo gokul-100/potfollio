@@ -1,21 +1,22 @@
 from django.shortcuts import render
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render 
 from .models import Post
 
-cards_data = [
-    {'id': 1, 'card_title': 'Card 1', 'card_description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj7Fnx0Fx2kOHAU9715pcAAwfJHrML3rml7Q&s'},
-    {'id': 2, 'card_title': 'Card 2', 'card_description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROYjj94a1EKPObxDQCbqSdwmIbkhQt5Np5lQ&s'},
-    {'id': 3, 'card_title': 'Card 3', 'card_description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI2RLOBO8DYvk8aAUNEs6DJzCJzlgHT7HfAg&s'},
-]
+
+cars=Post.objects.all()
 def landing_page(request):
-    return render(request, 'portfol/landing_page.html')
+    cars = Post.objects.all().order_by('-id')[:3]
+    
+    cars = cars[::-1]
+    
+    return render(request, 'portfol/landing_page.html',{'cards':cars})
 
 def card_page(request):
-
+    cars=Post.objects.all()
     # cards_datas = cards_data
-    return render(request, 'includes/card.html',{'cards':cards_data})
+    return render(request, 'includes/card.html',{'cards':cars})
 
 
 def contact_page(request):
@@ -29,15 +30,10 @@ def contact_page(request):
 
     return render(request, 'main/contact_page.html', {'form': form})
 
-from django.shortcuts import render, get_object_or_404
-from .models import Post  # You need to define this model
 
-def post_detail(request, card_id):
-    post = get_object_or_404(Post, id=card_id)
-    return render(request, 'main/post.html', {'post': post})
-
-def detail_page(request, card_id):
-    for c in cards_data:
-        if c['id'] == int(card_id):
-            card = c
-    return render(request, 'portfol/detail_page.html', {'card': card})
+def post_detail(request,card_id):
+    
+    for c in cars:
+        if c.id == int(card_id):
+            car_detail = c
+    return render(request, 'portfol/detail_page.html',{'card':car_detail})

@@ -5,9 +5,9 @@
     {% for card in cards %}
     <div class="card">
         <div class="card-title">{{ card.card_title }}</div>
-        <img src="{{ card.image }}" alt="Image {{ card.id }}">
+        <img src="{{ card.img_url.url }}" alt="Image {{ card.id }}">
         <div class="card-description">{{ card.card_description }}</div>
-        <a href="{% url 'detail_page' card.id %}">More...</a>
+        <a href="{% url 'post_detail' card.id %}">More...</a>
     </div>
 {% endfor %}   
 </div>

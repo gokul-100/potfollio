@@ -2,44 +2,54 @@
 {% block content %}
 {% load static %}
 
-<center> <h1>Welcome to My Portfolio</h1>  </center>
-    <a href="{% url 'contact_page' %}" class="contact-button">Contact</a>
-    <div class="container">
-      
-        <div class="introduction">
-            <p>
-                Hello! I am Gokulakannan M, a 22-year-old Software Engineer from Dharmapuri. 
-                I graduated with a B.Tech in Information Technology, and I am currently working at Changepond. 
-                I have a strong passion for technology and enjoy developing innovative solutions that make a difference. 
-                Explore my work and feel free to get in touch!
-            </p>
-        </div>
+<!-- Header Section -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'card_page' %}">All Posts</a></li>
+            <li><a href="{% url 'contact_page' %}">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <div class="photo">
-            <img src="{% static 'my photo.jpg' %}" >
-        </div>
+<!-- Main Content Section -->
+<center><h1>Welcome to My Portfolio</h1></center>
+<!-- <a href="{% url 'contact_page' %}" class="contact-button">Contact</a> -->
+<div class="container">
+    <div class="introduction">
+        <p>
+            Hello! I am Gokulakannan M, a 22-year-old Software Engineer from Dharmapuri. 
+            I graduated with a B.Tech in Information Technology, and I am currently working at Changepond. 
+            I have a strong passion for technology and enjoy developing innovative solutions that make a difference. 
+            Explore my work and feel free to get in touch!
+        </p>
     </div>
- 
-    <div class="card-container">
-        <div class="card">
-            <a href="{% url 'post_detail' 1 %}">
-                <img src='https://img.freepik.com/free-photo/sports-car-driving-asphalt-road-night-generative-ai_188544-8052.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1723939200&semt=ais_hybrid' alt="New Post 1">
-                <p>New Post - 1</p>
-            </a>
-        </div>
-        <div class="card">
-            <a href="{% url 'post_detail' 2 %}">
-                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEzqyX4c8UI_PaZRCJ6GmaGRnQ6zA2HakD0w&s' alt="New Post 2">
-                <p>New Post - 2</p>
-            </a>
-        </div>
-        <div class="card">
-            <a href="{% url 'post_detail' 3 %}">
-                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTicraEFPD1qQB1uCGZ36dlM3LIZ7_CQhfrpw&s' alt="New Post 3">
-                <p>New Post - 3</p>
-            </a>
-        </div>
+
+    <div class="photo">
+        <img src="{% static 'my photo.jpg' %}" alt="My Photo">
     </div>
-    <a href="{% url 'card_page' %}">All Post...</a>
+</div>
+
+<!-- Card Section -->
+ <h2 class="latestpost">Latest post </h2>
+<div class="card-container">
+    {% for card in cards %}
+    <div class="card">
+        <div class="card-title">{{ card.card_title }}</div>
+        <img src="{{ card.img_url.url }}" alt="Image {{ card.id }}">
+        <div class="card-description">{{ card.card_description }}</div>
+        <a href="{% url 'post_detail' card.id %}">More...</a>
+    </div>
+    {% endfor %}
+</div>
+<!-- <a href="{% url 'card_page' %}">All Posts...</a> -->
+
+<!-- Footer Section -->
+ <center>
+<footer>
+    <p>&copy; 2024 Gokulakannan M. All rights reserved.</p>
+</footer>
+</center>
 
 {% endblock %}
