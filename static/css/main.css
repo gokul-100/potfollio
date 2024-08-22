@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #363333;
 }
 
 /* Container Styling */
@@ -42,7 +42,7 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #333;
+    background-color: #8b8686;
     padding: 15px 0;
 }
 
@@ -93,7 +93,7 @@ footer {
 
 /* Card Styling */
 .card {
-    background-color: #fff;
+    background-color: #d498989c;
     border: 1px solid #ddd;
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -170,11 +170,54 @@ footer {
 .more-button:hover {
     background-color: #1e7e34;
 }
-.latestpost h2{
+.latestpost {
     position: absolute;
     left: 29px;
     border: black;
     border-block-color: initial;
     color: seagreen;
     text-shadow: 2px 1px 4px black;
+}
+/* style.css */
+
+/* General container styling */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #e66d6d65;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Image styling */
+.image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* Description text styling */
+.description {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Date and time styling */
+.description:last-child {
+    color: #888;
+    font-style: italic;
 }
