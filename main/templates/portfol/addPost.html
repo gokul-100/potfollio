@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block page_title %} {{ card.card_title }} {% endblock %}
+{% block content %}
+<h2>add new post</h2>
+<form action="/addpost/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit">submit</button>
+</form>
+{% endblock %}

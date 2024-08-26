@@ -1,6 +1,15 @@
 
 {% extends 'base.html' %}
 {% block content %}
+<header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'card_page' %}">All Posts</a></li>
+            <li><a href="{% url 'addpost' %}">Add Post</a></li>
+        </ul>
+    </nav>
+</header>
 <div class="card-container">
     {% for card in cards %}
     <div class="card">
@@ -11,5 +20,10 @@
     </div>
 {% endfor %}   
 </div>
+<center>
+    <footer>
+        <p>&copy; 2024 Gokulakannan M. All rights reserved.</p>
+    </footer>
+    </center>
 {% endblock %}
 
