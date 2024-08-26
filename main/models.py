@@ -10,10 +10,13 @@ class Post(models.Model):
     event_date = models.DateField(auto_now=True, auto_now_add=False)  # For storing date only
     event_time = models.TimeField(auto_now=True, auto_now_add=False)  # For storing time only
     created_at = models.DateTimeField(auto_now_add=True,null=True)
+    slug = models.SlugField(max_length=255, blank=True)
 
     def save(self, *args, **kwargs):
         # self.created_at = slugify(f'{self.event_date} {self.event_time}')
-        super().save(*args,**kwargs)
+        if not self.slug:
+            self.slug = slugify(self.card_title)
+            super().save(*args,**kwargs)
 
     def __str__(self):
         return self.card_title

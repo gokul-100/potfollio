@@ -61,9 +61,15 @@ class addpost(View):
 
 
 
-def post_detail(request,card_id):
+# def post_detail(request,slug):
     
-    for c in cars:
-        if c.id == int(card_id):
-            car_detail = c
-    return render(request, 'portfol/detail_page.html',{'card':car_detail})
+#     for c in cars:
+#         if c.slug == slug:
+#             car_detail = c
+#     return render(request, 'portfol/detail_page.html',{'card':car_detail})
+def post_detail(request, slug):
+    card =Post.objects.filter(slug=slug).first()
+    if card:
+        return render(request, 'portfol/detail_page.html', {'card': card})
+    else:
+        return render(request, 'portfol/404.html')
