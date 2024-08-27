@@ -6,11 +6,11 @@
       <ul>
           <li><a href="{% url 'home' %}">Home</a></li>
           <li><a href="{% url 'card_page' %}">All Posts</a></li>
-          <li><a href="{% url 'addpost' %}">add post</a></li>
+          <li><a href="{% url 'addpost' %}">Add Post</a></li>
       </ul>
   </nav>
 </header>
-  <center>
+<center>
     <div class="container">
         <div class="content">
             <h1 class="title">{{ card.card_title }}</h1>
@@ -18,15 +18,30 @@
             <p class="description">{{ card.card_description }}</p>
             <p class="description">{{ card.created_at }}</p>
             <p class="description">{{ card.event_time }}</p>
-
         </div>
     </div>
 
-  </center>
-  <center>
+    <!-- Display comments related to this post -->
+    <div class="comments-section">
+      <h3>Comments:</h3>
+      {% if comment %}
+          <ul class="comments-list">
+              {% for com in comment %}
+                  <li class="comment-item">
+                      <strong>{{ com.user_name }}</strong> says:
+                      <p class="comment-text">{{ com.text }}</p>
+                  </li>
+              {% endfor %}
+          </ul>
+      {% else %}
+          <p class="no-comments">No comments yet. Be the first to comment!</p>
+      {% endif %}
+  </div>
+  
+</center>
+<center>
     <footer>
         <p>&copy; 2024 Gokulakannan M. All rights reserved.</p>
     </footer>
-    </center>
+</center>
 {% endblock %}
-

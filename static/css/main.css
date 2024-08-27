@@ -221,3 +221,128 @@ footer {
     color: #888;
     font-style: italic;
 }
+/* form css */
+
+/* Form Container Styling */
+.form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Title */
+.form-container h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Styling */
+.btn-submit {
+    background-color: #28a745;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-submit:hover {
+    background-color: #218838;
+}
+/* Comments Section Styling */
+.comments-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f0f4f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Comments List Styling */
+.comments-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual Comment Styling */
+.comment-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.comment-item:last-child {
+    border-bottom: none;
+}
+
+/* Hover Effect for Comments */
+.comment-item:hover {
+    background-color: #e9f1f7;
+}
+
+/* Comment Text Styling */
+.comment-text {
+    margin: 10px 0 0 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* No Comments Text Styling */
+.no-comments {
+    font-style: italic;
+    color: #666;
+}
+
+/* Strong Username Styling */
+.comment-item strong {
+    font-size: 18px;
+    color: #007bff;
+}
+
